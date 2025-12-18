@@ -16,10 +16,7 @@ class DiskonCalculator:
 
         harga_akhir = harga_awal - jumlah_diskon
 
-        # Introduksi bug PPN 10%
-        harga_setelah_ppn = harga_akhir * 1.10
-
-        return harga_setelah_ppn
+        return harga_akhir
     
 # UJI COBA (Ini adalah test case yang akan GAGAL) ---
 if __name__ == '__main__':
