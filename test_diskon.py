@@ -32,5 +32,16 @@ class TestDiskonCalculator(unittest.TestCase):
         # ASSERT
         self.assertGreaterEqual(hasil, 500) # Harga tidak boleh turun
 
+    def test_diskon_float_33_persen(self):
+        """Tes 5: Menguji perhitungan diskon float: 33% dari 999 = 999 - 329.67 = 669.33"""
+        hasil = self.calc.hitung_diskon(999, 33)
+        self.assertAlmostEqual(hasil, 669.33)
+
+    def test_harga_awal_nol(self):
+        """Tes 6: Edge case: harga awal 0 seharusnya tetap 0"""
+        hasil = self.calc.hitung_diskon(0, 10)
+        self.assertEqual(hasil, 0)
+
+
 if __name__ == '__main__':
     unittest.main() # Jalankan semua tes
